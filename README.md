@@ -20,11 +20,15 @@ All custom environment variables can be found in the .env file
 
 I installed Material UI for a very modern style - [https://mui.com/](https://mui.com/)
 
+This test took approximately 5 hours for both of the tests.
+
 ## 2. C# test and algorithm skills
 location: **2-algorithm-test/**
 
 A very simple class using three main methods to validate the sudoku puzzle.
 Simply add the project to visual studio 2019 and run **Program.cs**.
+
+This test took approximately 3 and a half hours.
 
 ## 4. C# or JavaScript test for web based back-end
 
@@ -36,3 +40,5 @@ I had a lot of difficulty with this one not going to lie. :')
 It was amazing learning about dependency injection with C#
 
 I'm sadly not very familiar with this but I would jump at the opportunity to get to learn it even more.
+
+This test took approximately 6 hours and counting...
