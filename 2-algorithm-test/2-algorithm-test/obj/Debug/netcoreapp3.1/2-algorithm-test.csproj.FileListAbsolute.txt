@@ -1,0 +1,13 @@
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\bin\Debug\netcoreapp3.1\2-algorithm-test.exe
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\bin\Debug\netcoreapp3.1\2-algorithm-test.deps.json
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\bin\Debug\netcoreapp3.1\2-algorithm-test.runtimeconfig.json
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\bin\Debug\netcoreapp3.1\2-algorithm-test.runtimeconfig.dev.json
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\bin\Debug\netcoreapp3.1\2-algorithm-test.dll
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\bin\Debug\netcoreapp3.1\2-algorithm-test.pdb
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\obj\Debug\netcoreapp3.1\2-algorithm-test.csprojAssemblyReference.cache
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\obj\Debug\netcoreapp3.1\2-algorithm-test.csproj.CoreCompileInputs.cache
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\obj\Debug\netcoreapp3.1\2-algorithm-test.AssemblyInfoInputs.cache
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\obj\Debug\netcoreapp3.1\2-algorithm-test.AssemblyInfo.cs
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\obj\Debug\netcoreapp3.1\2-algorithm-test.dll
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\obj\Debug\netcoreapp3.1\2-algorithm-test.pdb
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\2-algorithm-test\obj\Debug\netcoreapp3.1\2-algorithm-test.genruntimeconfig.cache

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="full-body">
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="" class="brand-logo center">Movie List</a>
+            </div>
+        </nav>
+    </header>
+    <div class="v-body">
+        <div class="body-content">
+            <div class="search-container">
+                <p class="center">Search for any movie to get started and see the top <strong>3 results</strong>!</p>
+                <div class="input-group">
+                    <input type="text" name="search" class="browser-default search-movies-input" placeholder="Search a Movie" />
+                    <span class="search-input-icon">
+                        <i class="material-icons">search</i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="search-loader d-none">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+                <div class="movies-container">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://dummyimage.com/300x445/aaa/333" />
+                            <span class="card-title">
+                                <span class="title-placeholder"></span>
+                                <span class="year-placeholder"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://dummyimage.com/300x445/aaa/333" />
+                            <span class="card-title">
+                                <span class="title-placeholder"></span>
+                                <span class="year-placeholder"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://dummyimage.com/300x445/aaa/333" />
+                            <span class="card-title">
+                                <span class="title-placeholder"></span>
+                                <span class="year-placeholder"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-results">
+                <div class="movies-container"></div>
+            </div>
+
+            <div class="no-results d-none center">
+                <h3>No Movies Found</h3>
+                <p>Try searching for a different result.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                Powered by <a target="_blank" href="https://releases.jquery.com/">jQuery</a> &amp; built with <a target="_blank" href="https://materializecss.com/">Materializecss</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        const apiKey = 'a6bc9fa4'; // API key
+        // fetch the results as the user is typing
+        // first wait for the user to finish typing before executing the fetch request
+        var typingTimer,                //timer identifier
+            doneTypingInterval = 500,   // time in ms
+            searchInput = $('.search-movies-input'),
+            loaderContainer = $('.search-loader'),
+            resultsContainer = $('.search-results'),
+            noResultsContainer = $('.no-results');
+
+        // hide all results
+        hide_all();
+
+        // on keyup, start the countdown
+        searchInput.on('keyup', () => {
+            clearTimeout(typingTimer);
+            // show the loader if not visible and hide results container
+            if(loaderContainer.hasClass('d-none')) {
+                show_loader();
+            }
+            // execute function after the interval time
+            typingTimer = setTimeout(fetch_results, doneTypingInterval);
+        })
+        // on keydown, clear the countdown
+        searchInput.on('keydown', function () {
+            clearTimeout(typingTimer);
+        });
+
+        function fetch_results() {
+            let searchTerm = searchInput.val(),
+                url = 'http://www.omdbapi.com/?s=' + searchTerm + '&apikey=' + apiKey;
+            if(searchTerm) {
+                fetch(url)
+                .then(response => response.json())
+                .then(results => {
+                    if(results.Response === 'True') {
+                        // movies found
+                        const movies = results.Search;
+                        // after building the dive with it's contents show the results
+                        // using a callback
+                        $.when(build_results(movies))
+                        .done(function() {
+                            // display the results
+                            show_results();
+                        });
+                    } else {
+                        // no movies found
+                        show_no_results();
+                    }
+                })
+                .catch((error) => {
+                    // error fetching the data
+                    console.log(error)
+                });
+            } else {
+                hide_all();
+            }
+        }
+
+        function build_results(movies) {
+            // empty the results container
+            let appendContainer = resultsContainer.find('.movies-container');
+            appendContainer.html('');
+            // we only need to fetch the top 3 results
+            $(movies).each(function(index, result) {
+                if(index < 3) {
+                    let id = result.imdbID,
+                        title = result.Title,
+                        year = result.Year,
+                        poster = (result.Poster != 'N/A') ? (result.Poster) : 'https://dummyimage.com/300x445/333/aaa';
+                    console.log(poster)
+                    // build the html to throw in the results container
+                    let html = '<div class="card">' +
+                        '<a target="_blank" href="http://www.omdbapi.com/?i=' + id + '&apikey=' + apiKey + '">' +
+                            '<div class="card-image waves-effect waves-light">' +
+                                '<img src="' + poster + '" />' +
+                                '<span class="card-title">' +
+                                    title + '<br />' +
+                                    '<small>' + year + '</small>' +
+                                '</span>' +
+                            '</div>' +
+                        '</a>' +
+                    '</div>';
+                    // append the html to the result container
+                    appendContainer.append(html);
+                } else {
+                    // break out of the loop
+                    return false;
+                }
+            })
+            return;
+        }
+
+        // hides all the loaders, results and no results
+        function hide_all() {
+            loaderContainer.addClass('d-none');
+            resultsContainer.addClass('d-none');
+            noResultsContainer.addClass('d-none');
+        }
+
+        // unhide the loader
+        function show_loader() {
+            loaderContainer.removeClass('d-none');
+            resultsContainer.addClass('d-none');
+            noResultsContainer.addClass('d-none');
+        }
+
+        // unhide the movie results
+        function show_results() {
+            resultsContainer.removeClass('d-none');
+            loaderContainer.addClass('d-none');
+            noResultsContainer.addClass('d-none');
+        }
+
+        // unhide the no results container
+        function show_no_results() {
+            noResultsContainer.removeClass('d-none');
+            resultsContainer.addClass('d-none');
+            loaderContainer.addClass('d-none');
+        }
+    </script>
+</body>
+</html>
