@@ -51,5 +51,15 @@ namespace Beverage.Data
         {
             throw new NotImplementedException();
         }
+
+        public void DeleteRating(Rating cmd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Rating GetRatingById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

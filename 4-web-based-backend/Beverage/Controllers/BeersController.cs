@@ -97,5 +97,23 @@ namespace Beverage.Controllers
             // returns a full location in the header on where to retrieve the created resource
             return CreatedAtRoute(nameof(GetBeerRatingByBeer), new { BeerId = ratingReadDto.BeerId }, ratingReadDto);
         }
+
+        // removes a single resource
+        // DELETE api/beers/rate/{id}
+        [HttpDelete("rating/{id}")]
+        public ActionResult DeleteRating(int id)
+        {
+            var result = _repository.GetRatingById(id);
+            // returns Not Found if result is NULL
+            if (result == null)
+            {
+                return NotFound();
+            }
+            // found, now we need to delete
+            _repository.DeleteRating(result);
+            _repository.SaveChanges();
+            // returns a 204 with no content
+            return NoContent();
+        }
     }
 }

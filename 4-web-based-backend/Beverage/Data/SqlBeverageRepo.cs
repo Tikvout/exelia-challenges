@@ -43,6 +43,11 @@ namespace Beverage.Data
         {
             return _context.Ratings.Where(p => p.BeerId == beerId);
         }
+        // returns  rating by id
+        public Rating GetRatingById(int id)
+        {
+            return _context.Ratings.FirstOrDefault(p => p.Id == id);
+        }
         // adds the rating to be saved
         public void CreateBeerRating(Rating cmd)
         {
@@ -57,6 +62,16 @@ namespace Beverage.Data
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);
+        }
+
+        public void DeleteRating(Rating cmd)
+        {
+            if (cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
+            // removes the data from the database (still needs to be saved)
+            _context.Ratings.Remove(cmd);
         }
     }
 }

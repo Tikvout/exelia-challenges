@@ -1,5 +1,5 @@
 // import logo from './logo.svg'; // DELETE THE FILE AS WELL
-// import './App.css'; // DELETE THE FILE AS WELL
+import './App.css';
 
 import { useState, useEffect } from 'react';
 import axios from 'axios'
@@ -13,6 +13,8 @@ import InputBase from '@mui/material/InputBase';
 import Header from './components/Header'
 // Movies
 import ListMovies from './components/ListMovies'
+// Footer
+import Footer from './components/Footer'
 
 
 // using custom environment variables
@@ -23,9 +25,14 @@ function App() {
         <>
             <Header />
 
-            <Box mt={4}>
+            <Box
+                className="root-content"
+                mt={4}
+            >
                 <ListMovies />
             </Box>
+
+            <Footer />
 
 
             {/* <header className="App-header">

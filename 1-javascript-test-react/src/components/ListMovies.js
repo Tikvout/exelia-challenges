@@ -112,6 +112,14 @@ function MoviesList () {
     return (
         <>
             <Container maxWidth="md">
+                <Typography
+                    variant="h4"
+                    gutterBottom
+                    component="div"
+                    textAlign="center"
+                >
+                    Find a Movie
+                </Typography>
                 <Search>
                     <SearchIconWrapper>
                         <SearchIcon />
