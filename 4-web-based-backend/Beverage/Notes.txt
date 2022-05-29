@@ -11,4 +11,5 @@ I used MySQL server for the data storing
 change the database details in the the appsettins.json file
 
 migrate the Database
-	dotnet ef migrations add InitialMigration
+dotnet ef migrations add InitialMigration
+dotnet ef database update

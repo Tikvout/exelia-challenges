@@ -31,7 +31,7 @@ Running the application:
 2. run the command **npm install** to install all node modules and packages.
 3. run the command **npm start**.
 
-The JavaScript test took approximately 6 hours for both the jQuery and React version.
+The JavaScript test took approximately 6 hours for both the jQuery and React versions.
 
 ## 2. C# test and algorithm skills
 location: **2-algorithm-test/**
@@ -55,6 +55,37 @@ I'm sadly not very familiar with this but I would jump at the opportunity to get
 This test took approximately 8 hours (I had to start over in version 2022)
 
 The web API allows for Creating Beers and Adding/Removing ratings for them.
+
+I did not get to do any POST validation so that would have been the next step.
+
+### Setting Up
+I used SQL Server as my Database storage engine.
+Other Nuget packages I installed were:
+- Microsoft.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.SqlServer
+- AutoMapper.Extensions.Microsoft.DependencyInjection
+- Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
+---
+
+1. Open the project inside Visual Studio Code 2022.
+
+2. Edit the  **appsettings.json** file and change the *BaverageConnection* string to your database connection details.
+
+3. Inside the visual studio code terminal *(Ctrl + `)* run the command:
+```bash
+dotnet ef migrations add InitialMigrate
+```
+this will generate a migration file to create the database and all tables.
+
+4. Then run the command:
+```bash
+dotnet ef database update
+```
+this will create the database and tables from the generated migration file.
+
+Now you should be able to run the program and use any of the endpoints below:
 
 ---
 ### Endpoints
