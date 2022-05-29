@@ -28,7 +28,8 @@ I installed Material UI for a very modern style - [https://mui.com/](https://mui
 Running the application:
 
 1. cd in to the **1-javascript-test-react/** folder.
-2. run the command **npm start**.
+2. run the command **npm install** to install all node modules and packages.
+3. run the command **npm start**.
 
 The JavaScript test took approximately 6 hours for both the jQuery and React version.
 
