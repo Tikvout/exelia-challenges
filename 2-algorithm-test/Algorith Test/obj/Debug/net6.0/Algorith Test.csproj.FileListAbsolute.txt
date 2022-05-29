@@ -1,0 +1,15 @@
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\bin\Debug\net6.0\Algorith Test.exe
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\bin\Debug\net6.0\Algorith Test.deps.json
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\bin\Debug\net6.0\Algorith Test.runtimeconfig.json
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\bin\Debug\net6.0\Algorith Test.dll
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\bin\Debug\net6.0\Algorith Test.pdb
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.csproj.AssemblyReference.cache
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.AssemblyInfoInputs.cache
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.AssemblyInfo.cs
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.csproj.CoreCompileInputs.cache
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.dll
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\refint\Algorith Test.dll
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.pdb
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\Algorith Test.genruntimeconfig.cache
+C:\wamp\exelia-interview\exelia-challenges\2-algorithm-test\Algorith Test\obj\Debug\net6.0\ref\Algorith Test.dll

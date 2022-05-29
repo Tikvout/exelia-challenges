@@ -1,0 +1,14 @@
+﻿Using NuGet Packages:
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.SqlServer
+AutoMapper.Extensions.Microsoft.DependencyInjection
+Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
+
+# Database
+I used MySQL server for the data storing
+change the database details in the the appsettins.json file
+
+migrate the Database
+	dotnet ef migrations add InitialMigration
